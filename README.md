@@ -6,7 +6,9 @@ KlarHaus was created as a portfolio project to demonstrate the design and develo
 
 ## Live Demo
 
-The project is deployed with Vercel.
+[View the live project](https://klarhaus-cleaning.vercel.app/)
+
+![KlarHaus website preview](./docs/klarhaus-preview.png)
 
 ## Features
 
