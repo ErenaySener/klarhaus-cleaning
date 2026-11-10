@@ -1,8 +1,8 @@
 import Container from "../../components/Container/Container";
 import css from "./Hero.module.css";
 
-import heroMain from "../../assets/images/hero-main.jpg";
-import heroSecondary from "../../assets/images/hero-secondary.png";
+import heroMain from "../../assets/images/Hero-main.jpg";
+import heroSecondary from "../../assets/images/Hero-secondary.png";
 
 export default function Hero({ translations }) {
   return (
