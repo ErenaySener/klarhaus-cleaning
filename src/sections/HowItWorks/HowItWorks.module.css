@@ -1,0 +1,269 @@
+.howItWorks {
+  position: relative;
+  overflow: hidden;
+
+  padding: var(--space-3xl) 0 var(--space-xl);
+
+  background-color: #dfeee9;
+}
+
+/* Decorative background shape */
+
+.howItWorks::after {
+  content: "";
+
+  position: absolute;
+  right: -120px;
+  bottom: -160px;
+
+  width: 380px;
+  height: 380px;
+
+  border-radius: 50%;
+
+  background-color: rgba(255, 255, 255, 0.35);
+
+  pointer-events: none;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.heading {
+  position: relative;
+  z-index: 1;
+
+  max-width: 650px;
+  margin-bottom: var(--space-2xl);
+}
+
+.eyebrow {
+  margin-bottom: var(--space-sm);
+
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+
+  color: var(--color-primary);
+}
+
+.title {
+  margin-bottom: var(--space-sm);
+
+  font-size: 40px;
+  line-height: 1.15;
+
+  color: var(--color-text);
+}
+
+.description {
+  max-width: 560px;
+
+  font-size: 16px;
+  line-height: 1.65;
+
+  color: var(--color-text-light);
+}
+
+/* =========================
+   STEPS
+========================= */
+
+.steps {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px;
+}
+
+.step {
+  min-width: 0;
+}
+
+.iconRow {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 26px;
+}
+
+.iconBox {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: 64px;
+  height: 64px;
+
+  border-radius: 18px;
+
+  background-color: #ffffff;
+  color: var(--color-primary);
+
+  box-shadow: 0 12px 28px rgba(31, 41, 51, 0.08);
+}
+
+.iconBox svg {
+  width: 28px;
+  height: 28px;
+
+  fill: none;
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Connector between steps */
+
+.connector {
+  display: flex;
+  flex: 1;
+  align-items: center;
+
+  min-width: 40px;
+  margin-left: 18px;
+}
+
+.connectorLine {
+  flex: 1;
+
+  height: 1px;
+
+  background-color: rgba(23, 107, 91, 0.18);
+}
+
+.connectorArrow {
+  margin-left: 8px;
+
+  font-size: 19px;
+
+  color: var(--color-primary);
+}
+
+/* Step content */
+
+.number {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  color: var(--color-primary);
+}
+
+.stepTitle {
+  margin-bottom: 10px;
+
+  font-size: 20px;
+  line-height: 1.3;
+
+  color: var(--color-text);
+}
+
+.stepDescription {
+  max-width: 300px;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: var(--color-text-light);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    column-gap: var(--space-md);
+  }
+
+  .iconRow {
+    grid-row: 1 / 4;
+
+    align-items: flex-start;
+
+    margin-bottom: 0;
+  }
+
+  .connector {
+    display: none;
+  }
+
+  .number,
+  .stepTitle,
+  .stepDescription {
+    grid-column: 2;
+  }
+
+  .number {
+    margin-bottom: 8px;
+  }
+
+  .stepDescription {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 768px) {
+  .howItWorks {
+    padding: var(--space-2xl) 0 var(--space-lg);
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .iconBox {
+    width: 58px;
+    height: 58px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .step {
+    grid-template-columns: 58px 1fr;
+    column-gap: var(--space-sm);
+  }
+
+  .iconBox {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 15px;
+  }
+
+  .iconBox svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .stepTitle {
+    font-size: 18px;
+  }
+
+  .stepDescription {
+    font-size: 13px;
+  }
+}

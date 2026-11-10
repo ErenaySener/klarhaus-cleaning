@@ -1,0 +1,158 @@
+.footer {
+    position: relative;
+
+    padding: 64px 0 28px;
+
+    background:
+        radial-gradient(circle at 85% 15%,
+            rgba(255, 255, 255, 0.05),
+            transparent 24%),
+        #084a41;
+
+    color: #ffffff;
+}
+
+.footer::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background-color: #77c9b5;
+}
+
+/* Top area */
+
+.top {
+    display: grid;
+    grid-template-columns: 1.4fr 0.7fr 0.9fr;
+    gap: 64px;
+
+    padding-bottom: 42px;
+}
+
+.brand {
+    max-width: 380px;
+}
+
+.logo {
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+
+    color: #ffffff;
+}
+
+.description {
+    max-width: 360px;
+
+    font-size: 14px;
+    line-height: 1.75;
+
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.columnTitle {
+    margin-bottom: 18px;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+
+    color: #9ed9cc;
+}
+
+/* Link groups */
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+}
+
+.links a {
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.links a:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+/* Bottom area */
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.copyright {
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.legal {
+    display: flex;
+    gap: 22px;
+}
+
+.legal a {
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    transition: color 0.2s ease;
+}
+
+.legal a:hover {
+    color: #ffffff;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 52px 0 24px;
+    }
+
+    .top {
+        grid-template-columns: 1fr;
+        gap: 36px;
+
+        padding-bottom: 32px;
+    }
+
+    .brand {
+        max-width: 100%;
+    }
+
+    .bottom {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 16px;
+    }
+}

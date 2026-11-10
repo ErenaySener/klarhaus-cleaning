@@ -1,0 +1,555 @@
+.serviceArea {
+    position: relative;
+    overflow: hidden;
+
+    padding: var(--space-xl) 0 var(--space-3xl);
+
+    background-color: #dfeee9;
+}
+
+/* Section transition */
+
+.serviceArea::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 140px;
+    height: 1px;
+
+    background-color: rgba(11, 86, 75, 0.26);
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+}
+
+.serviceArea::after {
+    content: "";
+
+    position: absolute;
+    top: -4px;
+    left: 50%;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background-color: #0b564b;
+
+    box-shadow: 0 0 0 6px rgba(11, 86, 75, 0.1);
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: var(--space-3xl);
+    align-items: center;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.content {
+    max-width: 450px;
+}
+
+.eyebrow {
+    margin-bottom: var(--space-sm);
+
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+
+    color: var(--color-primary);
+}
+
+.title {
+    margin-bottom: var(--space-md);
+
+    font-size: 42px;
+    line-height: 1.15;
+
+    color: var(--color-text);
+}
+
+.description {
+    margin-bottom: var(--space-lg);
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: var(--color-text-light);
+}
+
+.note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 18px;
+
+    border: 1px solid rgba(11, 86, 75, 0.14);
+    border-radius: var(--radius-md);
+
+    background-color: rgba(255, 255, 255, 0.76);
+}
+
+.noteIcon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+
+    border-radius: 50%;
+
+    background-color: #0b564b;
+    color: #ffffff;
+
+    font-size: 12px;
+}
+
+.note p {
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: var(--color-text);
+}
+
+/* =========================
+   AREA PANEL
+========================= */
+
+.areaPanel {
+    overflow: hidden;
+
+    border: 1px solid rgba(11, 86, 75, 0.16);
+    border-radius: 28px;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 24px 60px rgba(31, 41, 51, 0.12);
+}
+
+/* =========================
+   PANEL HEADER
+========================= */
+
+.panelHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 28px 30px 20px;
+
+    border-bottom: 1px solid rgba(11, 86, 75, 0.1);
+}
+
+.panelEyebrow {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+
+    color: #0b564b;
+}
+
+.panelHeader h3 {
+    font-size: 28px;
+    line-height: 1.2;
+
+    color: var(--color-text);
+}
+
+.locationIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    border: 1px solid rgba(11, 86, 75, 0.12);
+    border-radius: 14px;
+
+    background-color: #dfeee9;
+    color: #0b564b;
+}
+
+.locationIcon svg {
+    width: 22px;
+    height: 22px;
+
+    fill: none;
+    stroke: currentColor;
+
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* =========================
+   REGIONAL MAP
+========================= */
+
+.mapArea {
+    position: relative;
+    overflow: hidden;
+
+    height: 400px;
+    margin: 24px 24px 0;
+
+    border: 2px solid rgba(11, 86, 75, 0.38);
+    border-radius: 22px;
+
+    background-color: #dfeee9;
+
+    box-shadow:
+            0 10px 28px rgba(11, 86, 75, 0.08),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.mapImage {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+        saturate(0.7) contrast(1.08) brightness(1.02);
+
+    transform: scale(1.08);
+}
+
+/* Soft brand tint over the real map */
+
+.mapTint {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(135deg,
+            rgba(223, 238, 233, 0.14),
+            rgba(11, 86, 75, 0.06));
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   CITY MARKERS
+========================= */
+
+.cityMarker {
+    position: absolute;
+    z-index: 4;
+
+    width: 11px;
+    height: 11px;
+
+    transform: translate(-50%, -50%);
+}
+
+.markerDot {
+    display: block;
+
+    width: 11px;
+    height: 11px;
+
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+
+    background-color: #0b564b;
+
+    box-shadow:
+        0 0 0 4px rgba(11, 86, 75, 0.18),
+        0 6px 14px rgba(31, 41, 51, 0.2);
+}
+
+/* City label */
+
+.cityLabel {
+    position: absolute;
+
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 34px;
+    padding: 0 13px;
+
+    border: 1px solid rgba(11, 86, 75, 0.16);
+    border-radius: 999px;
+
+    white-space: nowrap;
+
+    background-color: rgba(255, 255, 255, 0.96);
+    color: var(--color-text);
+
+    box-shadow:
+        0 8px 20px rgba(31, 41, 51, 0.14);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =========================
+   EXACT CITY POSITIONS
+========================= */
+
+/* Bad Homburg */
+.badHomburgMarker {
+    left: 21.1%;
+    top: 22.6%;
+}
+
+.badHomburgMarker .cityLabel {
+    left: 20px;
+    top: -12px;
+}
+
+/* Frankfurt */
+.frankfurtMarker {
+    left: 25.5%;
+    top: 51.4%;
+}
+
+.frankfurtMarker .cityLabel {
+    right: 20px;
+    bottom: -10px;
+}
+
+/* Offenbach */
+.offenbachMarker {
+    left: 31.6%;
+    top: 55.1%;
+}
+
+.offenbachMarker .cityLabel {
+    left: 20px;
+    top: -12px;
+}
+
+/* Neu-Isenburg */
+.neuIsenburgMarker {
+    left: 26.5%;
+    top: 65.5%;
+}
+
+.neuIsenburgMarker .cityLabel {
+    right: 20px;
+    top: 0;
+}
+
+/* Heusenstamm */
+.heusenstammMarker {
+    left: 33.8%;
+    top: 64.5%;
+}
+
+.heusenstammMarker .cityLabel {
+    left: 20px;
+    top: 5px;
+}
+
+/* Rüsselsheim */
+.ruesselsheimMarker {
+    left: 7.8%;
+    top: 81%;
+}
+
+.ruesselsheimMarker .cityLabel {
+    left: 20px;
+    top: -12px;
+}
+
+/* Bruchköbel */
+.BruchköbelMarker {
+    left: 42.4%;
+    top: 35.5%;
+}
+
+.BruchköbelMarker .cityLabel {
+    left: 20px;
+    top: -12px;
+}
+
+/* Bad Orb */
+.badOrbMarker {
+    left: 71.4%;
+    top: 23.4%;
+}
+
+.badOrbMarker .cityLabel {
+    right: 20px;
+    top: -12px;
+}
+
+.mapCredit {
+    position: absolute;
+    z-index: 5;
+
+    right: 12px;
+    bottom: 9px;
+
+    padding: 3px 6px;
+
+    border-radius: 6px;
+
+    background-color: rgba(255, 255, 255, 0.74);
+
+    font-size: 9px;
+
+    color: rgba(31, 41, 51, 0.56);
+}
+
+/* =========================
+   LOCATION LIST
+========================= */
+
+.locationGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    padding: 22px 24px 24px;
+}
+
+.locationCard {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(11, 86, 75, 0.1);
+    border-radius: 14px;
+
+    background-color: #edf6f3;
+    color: var(--color-text);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.smallPin {
+    font-size: 9px;
+
+    color: #0b564b;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .content {
+        max-width: 620px;
+    }
+}
+
+@media (max-width: 768px) {
+    .serviceArea {
+        padding: var(--space-lg) 0 var(--space-2xl);
+    }
+
+    .title {
+        font-size: 34px;
+    }
+
+    .panelHeader {
+        padding: 24px 24px 18px;
+    }
+
+    .panelHeader h3 {
+        font-size: 24px;
+    }
+
+    .mapArea {
+        height: 360px;
+
+        margin: 20px 20px 0;
+    }
+
+    .cityLabel {
+        min-height: 31px;
+        padding: 0 10px;
+
+        font-size: 11px;
+    }
+
+    .locationGrid {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .title {
+        font-size: 30px;
+    }
+
+    .areaPanel {
+        border-radius: 22px;
+    }
+
+    .mapArea {
+        height: 330px;
+
+        margin: 16px 16px 0;
+    }
+
+    .mapImage {
+        transform: scale(1.18);
+    }
+
+    .cityLabel {
+        min-height: 28px;
+        padding: 0 8px;
+
+        font-size: 9px;
+    }
+
+    .markerDot {
+        width: 9px;
+        height: 9px;
+    }
+
+
+
+    .locationGrid {
+        grid-template-columns: 1fr;
+
+        padding: 16px;
+    }
+}

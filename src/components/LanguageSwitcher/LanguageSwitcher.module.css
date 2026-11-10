@@ -1,0 +1,28 @@
+.switcher {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.switcher button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    font-size: 14px;
+    color: var(--color-text-light);
+}
+
+.switcher button:hover {
+    color: var(--color-primary);
+}
+
+.switcher .active {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+.separator {
+    color: var(--color-border);
+}

@@ -1,0 +1,208 @@
+.cta {
+    position: relative;
+    overflow: hidden;
+
+    background-color: #0b564b;
+}
+
+.wrapper {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+
+    min-height: 340px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    max-width: 650px;
+
+    padding: 64px 56px 64px 0;
+}
+
+.eyebrow {
+    margin-bottom: 14px;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+
+    color: #9dd9cc;
+}
+
+.title {
+    max-width: 620px;
+    margin-bottom: 16px;
+
+    font-size: 44px;
+    line-height: 1.08;
+
+    color: #ffffff;
+}
+
+.description {
+    max-width: 500px;
+    margin-bottom: 28px;
+
+    font-size: 16px;
+    line-height: 1.65;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* CTA button */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    min-height: 50px;
+    padding: 0 22px;
+
+    border-radius: var(--radius-sm);
+
+    background-color: #ffffff;
+    color: #0b564b;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+
+    background-color: #f1f7f5;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.imageWrap {
+    position: relative;
+
+    min-height: 340px;
+    overflow: hidden;
+}
+
+.image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.imageOverlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(90deg,
+            #0b564b 0%,
+            rgba(11, 86, 75, 0.7) 12%,
+            rgba(11, 86, 75, 0.15) 38%,
+            transparent 65%);
+
+    pointer-events: none;
+}
+
+/* =========================
+   DECORATION
+========================= */
+
+.cta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.025);
+
+    transform: translate(-130px, -190px);
+
+    pointer-events: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .content {
+        max-width: 680px;
+
+        padding: 56px 0;
+    }
+
+    .imageWrap {
+        min-height: 300px;
+    }
+
+    .imageOverlay {
+        background:
+            linear-gradient(180deg,
+                #0b564b 0%,
+                rgba(11, 86, 75, 0.25) 30%,
+                transparent 65%);
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 48px 0;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .imageWrap {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 31px;
+    }
+
+    .imageWrap {
+        min-height: 210px;
+    }
+}
